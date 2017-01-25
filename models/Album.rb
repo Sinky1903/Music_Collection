@@ -40,4 +40,13 @@ def self.delete_all
 sql = "DELETE FROM Album;"
 end
 
+def artists()
+sql = "SELECT * FROM Artist WHERE id = #{@artist_id}"
+albums = SqlRunner.run( sql ).first
+result = Artist.new( albums )
+return result
+end
+
+
+
 end
